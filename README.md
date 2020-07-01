@@ -1,4 +1,4 @@
-# conkybakalari
+## conkybakalari
 <div align="center">
   
   Konfigurace pro conky, která vypisuje průměr známek
@@ -9,11 +9,11 @@
 </div>
 Průměr z Bakalářů na conky widgetu. conkybakalari je založen na mobilním API bakalářů. Děkuji projektu
 Prvni spuštění pravděpodobně nebude fungovat, protože se vytváří output soubor, který slouží aby to fungovalo i bez internetu.
-# Instalace
+## Instalace
 Dejte všechny soubory do složky ~/.config/conky/ a zadejte do souboru bakalari.py URL, uživatelské jméno a heslo.
 Možná budete muset změnit v conky.conf část, kde se spouští python skript. Musí být spuštěn s Python 3.
 (Verzi ověříte spuštěním "python --version", pokud je to verze 2.x.x tak změntě část na python3)
-# Možnosti
+## Možnosti
 V souboru conky.conf lze změnit všechno grafické v programu(alignment, font, barva atd.), login se dává do souboru bakalari.py
-# Licence
+## Licence
 conkybakalari je linencován pod GNU GPLv3
