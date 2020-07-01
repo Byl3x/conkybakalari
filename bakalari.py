@@ -18,36 +18,67 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 #  
-
+#  
 import requests
 import bakalari_token
 from xml.dom import minidom
-token = bakalari_token.generate_token("url", "username", "password")
+url = "<url>"
+token = bakalari_token.generate_token(url, "<username>", "<password>")
 r = requests.get(url+"?hx="+token+"&pm=znamky")
+r2 = requests.get(url+"?hx="+token+"&pm=ukoly")
 
 requeststr = str(r.text)
+requeststr2 = str(r2.text)
 
-f = open("request.xml", "w")
-f.write(requeststr)
-f.close()
+gradexml = open("znamky.xml", "w")
+gradexml.write(requeststr)
+gradexml.close()
 
-mydoc = minidom.parse('request.xml')
-prumery = mydoc.getElementsByTagName('prumer')
-predmety = mydoc.getElementsByTagName('nazev')
+hwxml = open("ukoly.xml", "w")
+hwxml.write(requeststr2)
+hwxml.close()
+
+mygrade = minidom.parse('znamky.xml')
+myhomework = minidom.parse('ukoly.xml')
+ukolypredmety = myhomework.getElementsByTagName('predmet')
+ukolypopisy = myhomework.getElementsByTagName('popis')
+ukolystatusy = myhomework.getElementsByTagName('status')
+prumery = mygrade.getElementsByTagName('prumer')
+predmety = mygrade.getElementsByTagName('nazev')
+
 prumer = []
 predmet = []
+ukolypopis = []
+ukolypredmet = []
+ukolystatus = []
+
+for elem in ukolypopisy:
+    ukolypopis.append(elem.firstChild.data)
+for elem in ukolypredmety:
+    ukolypredmet.append(elem.firstChild.data)
+for elem in ukolystatusy:
+	ukolystatus.append(elem.firstChild.data)
+	
 for elem in prumery:
     prumer.append(elem.firstChild.data)
 for elem in predmety:
     predmet.append(elem.firstChild.data)
+
+ukolycombined = ""
 combined = ""
 i = 0
-clear = open("./output", "w")
-clear.write("")
-clear.close()
-output = open("./output", "a")
+l = 0
 
 while len(prumer) > i:
-	combined = predmet[i]+": "+prumer[i]+"\n"
+	combined = combined+predmet[i]+": "+prumer[i]+"\n"
 	i += 1
-	output.write(combined)
+print(combined)
+
+while len(ukolypopis) > l:
+	if ukolystatus[l] == "probehlo":
+		l += 1
+	else:
+		ukolycombined = ukolycombined+ukolypredmet[l]+": \n"+ukolypopis[l]+" \n"+"Status:"+ukolystatus[l]+"\n"
+		ukolycombined = ukolycombined.replace("<br />", " \n")
+		l += 1
+print(ukolycombined)
