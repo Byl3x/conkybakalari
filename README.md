@@ -23,6 +23,8 @@ V souboru conky.conf lze změnit všechno grafické v programu(alignment, font, 
 ## Licence
 conkybakalari je linencován pod GNU GPLv3
 
-##Dependencies
+## Dependencies
 Všechny dependencies jsou v souboru dependencies.txt(není soubor pro pip), nainstalujte všechny a potom by všechno mělo fungovat.
 
+## Screenshots
+![Alt text](https://i.imgur.com/TS2UvKZ.png)
