@@ -1,7 +1,0 @@
-***THIS FILE IS NOT FOR PIP***
-requests
-bakalari_token
-xml
-conky
-python3
-an internet connection
