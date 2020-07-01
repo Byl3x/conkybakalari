@@ -9,7 +9,7 @@
   ![GitHub last commit](https://img.shields.io/github/last-commit/Byl3x/conkybakalari)
 </div>
 
-Průměr z Bakalářů na conky widgetu. conkybakalari je založen na mobilním API bakalářů. Děkuji projektu
+Průměr z Bakalářů na conky widgetu. conkybakalari je založen na mobilním API bakalářů. Děkuji projektu bakalari-api za dokumentaci.
 Prvni spuštění pravděpodobně nebude fungovat, protože se vytváří output soubor, který slouží aby to fungovalo i bez internetu.
 
 ## Instalace
