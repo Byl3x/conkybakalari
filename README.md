@@ -1,4 +1,4 @@
-#conkybakalari
+# conkybakalari
 <div align="center">
   
   Konfigurace pro conky, která vypisuje průměr známek
