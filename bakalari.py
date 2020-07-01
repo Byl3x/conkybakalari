@@ -3,8 +3,6 @@
 #
 #  bakalari.py
 #  
-#  Copyright 2020 Unknown <bylex@mx>
-#  
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 2 of the License, or
@@ -20,12 +18,11 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 #  
-#  
+
 import requests
 import bakalari_token
 from xml.dom import minidom
-url = ""
-token = bakalari_token.generate_token(url, "", "")
+token = bakalari_token.generate_token("url", "username", "password")
 r = requests.get(url+"?hx="+token+"&pm=znamky")
 
 requeststr = str(r.text)
