@@ -11,6 +11,7 @@
 
 Průměr a úkoly z Bakalářů na conky widgetu. conkybakalari je založen na mobilním API bakalářů. Použita dokumentace bakalari-api.
 conkybakalari může fungovat částečně i offline, pokud nikdo nesmaže xml soubory které si conkybakalari vytvoří, ale samozřejmě neboudou aktualizované známky ani úkoly
+!!!Pouze pro bakalari API v1!!!
 
 ## Instalace
 Dejte všechny soubory do složky ~/.config/conky/ a zadejte do souboru bakalari.py URL, uživatelské jméno a heslo. Pokud složka neexistuje tak ji vytvořte.
